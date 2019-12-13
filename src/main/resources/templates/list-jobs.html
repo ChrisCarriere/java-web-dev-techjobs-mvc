@@ -12,32 +12,18 @@
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
-    <Table class="job-listing" th:each="job : ${jobs}">
-        <tr>
-            <td>ID:</td>
-            <td th:text="${job.getId()}"></td>
+    <table class="job-listing">
+        <tr th:each="job : ${jobs}">
+            <td>
+                <p th:text="${'ID: ' + job.getId()}"></p>
+                <p th:text="${'Name: ' + job.getName()}"></p>
+                <p th:text="${'Employer: ' + job.getEmployer()}"></p>
+                <p th:text="${'Location: ' + job.getLocation()}"></p>
+                <p th:text="${'Position Type: ' + job.getPositionType()}"></p>
+                <p th:text="${'Skill: ' + job.getCoreCompetency()}"></p>
+            </td>
         </tr>
-        <tr>
-            <td>Name:</td>
-            <td th:text="${job.getName()}"></td>
-        </tr >
-        <tr>
-            <td>Employer</td>
-            <td th:text="${job.getEmployer().value}"></td>
-        </tr>
-        <tr>
-            <td>Location:</td>
-            <td th:text="${job.getLocation().value}"></td>
-        </tr>
-        <tr>
-            <td>Position Type:</td>
-            <td th:text="${job.getPositionType().value}"></td>
-        </tr>
-        <tr>
-            <td>Skill:</td>
-            <td th:text="${job.getCoreCompetency().value}"></td>
-        </tr>
-    </Table>
+    </table>
 
 </div>
 
